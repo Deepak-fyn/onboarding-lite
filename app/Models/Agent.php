@@ -1,17 +1,24 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Agent extends Model
+class Agent extends Authenticatable
 {
+    use HasApiTokens,HasRoles;
     protected $fillable = [
         'name',
         'email',
         'phone',
         'date_of_birth',
         'status',
+        'password'
+    ];
+
+    protected $hidden = [
+        'password',
     ];
 
     public function kyc()

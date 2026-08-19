@@ -58,3 +58,8 @@ Route::get(
     '/admin/agent-documents/{document}/view',
     [AgentDocumentController::class, 'view']
 )->name('admin.agent-documents.view');
+
+Route::post(
+    '/agent/login',
+    [AgentController::class, 'webLogin']
+);
