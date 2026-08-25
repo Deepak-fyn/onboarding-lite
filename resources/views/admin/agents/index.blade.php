@@ -165,7 +165,7 @@
                 </td>
 
                 <td>
-                    {{ $agent->kyc?->aadhaar_number }}
+                    {{ $agent->kyc?->aadhar_number }}
                 </td>
 
                 <td class="{{ $agent->status }}">
